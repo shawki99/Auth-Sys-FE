@@ -1,75 +1,67 @@
-# 🛡️ NestJS Authentication API
+# ✨ React Auth Frontend (with Vite + TypeScript)
 
-This is a full-stack-ready authentication API built with [NestJS](https://nestjs.com/) and MongoDB. It supports user signup, login, and access to protected routes using JWT.
+This is the frontend interface for a full-stack authentication system. It connects to a NestJS backend and allows users to sign up, sign in, and access a protected welcome page.
 
----
-
-## ✨ Features
-
-- ✅ User registration & login with hashed passwords
-- ✅ JWT-based authentication
-- ✅ MongoDB integration with Mongoose
-- ✅ Global validation with `class-validator`
-- ✅ Swagger API documentation (`/api`)
-- ✅ Security via `helmet` middleware
-- ✅ Logging on important events
+Built using:
+- ✅ React (Vite + TypeScript)
+- ✅ Axios for HTTP requests
+- ✅ React Router for navigation
+- ✅ Custom styling with CSS
 
 ---
 
-## 🏅 Bonus Points Implemented
+## 🎯 Features
 
-| Feature              | Status |
-|----------------------|--------|
-| Logging              | ✅     |
-| Error Handling       | ✅     |
-| Swagger Docs         | ✅     |
-| Global Validation    | ✅     |
-| Helmet (Security)    | ✅     |
-| Rate Limiting        | ✅ (Optional - Setup Ready) |
-| Unit Testing         | ✅ Basic test scaffold |
-| Environment Config   | ✅ via `.env` |
+- 🔐 Signup with email, name, and strong password
+- 🔐 Signin with JWT-based login
+- 👋 Welcome page that requires valid token
+- ✅ Form validation before submission
+- ✅ Beautiful, responsive UI with gradient layout
+- ✅ Redirects on successful auth
+- ✅ Token stored in `localStorage`
 
 ---
 
-## 📦 Tech Stack
+## 🧱 Pages Included
 
-- **Backend:** NestJS
-- **Database:** MongoDB
-- **Authentication:** Passport + JWT
-- **Validation:** class-validator
-- **Documentation:** Swagger
+| Page        | Path         | Description                      |
+|-------------|--------------|----------------------------------|
+| SignupPage  | `/signup`    | User registration                |
+| SigninPage  | `/signin`    | Login and receive JWT            |
+| WelcomePage | `/welcome`   | Protected route, shows user name |
 
 ---
 
-## 🧪 API Endpoints
+## 🌐 Backend Connection
 
-| Method | Endpoint          | Description           | Auth Required |
-|--------|-------------------|-----------------------|---------------|
-| POST   | `/auth/signup`    | Register new user     | ❌ No          |
-| POST   | `/auth/signin`    | Login and receive JWT | ❌ No          |
-| GET    | `/auth/welcome`   | Protected welcome     | ✅ Yes         |
+This frontend connects to the backend API:
+
+Base URL: http://localhost:3000
+Make sure you have the backend running locally first.  
+Backend repo: [Auth System Backend](https://github.com/shawki99/Auth-Sys-BE)
 
 ---
 
 ## ⚙️ How to Install (From Scratch)
 
-> 🧠 This guide assumes you have **no dependencies installed yet**.
+> 💡 This guide assumes the user has no tooling installed yet.
 
 ---
 
 ### 📁 Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nestjs-auth-system.git
-cd nestjs-auth-system
+git clone https://github.com/shawki99/Auth-Sys-FE.git
+cd Auth-Sys-FE
 ```
-
 ---
 
 ### 🧱 Step 2: Install Node.js
 
-Download and install from https://nodejs.org (LTS version recommended).
-Once installed, check with:
+Download and install from https://nodejs.org (LTS recommended)
+
+Check installation:
+
 ```bash
 node -v
 npm -v
@@ -77,18 +69,7 @@ npm -v
 
 ---
 
-### 🍃 Step 3: Install MongoDB
-
-Download MongoDB Community Edition from https://www.mongodb.com/try/download/community
-Follow setup instructions for your OS
-Start MongoDB:
-
-    On Linux/macOS: mongod
-    On Windows: use MongoDB Compass or start MongoDB as a service
-    
----
-
-### 📦 Step 4: Install Project Dependencies
+### 🚀 Step 3: Install Project Dependencies
 
 ```bash
 npm install
@@ -96,34 +77,32 @@ npm install
 
 ---
 
-### 📄 Step 5: Create Environment Variables
-
-Create a file named .env in the root folder:
+### ⚒️ Step 4: Run the Project
 
 ```bash
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/authdb
-JWT_SECRET=your_secret_key
+npm run dev
+```
+
+Open the browser at:
+```bash
+http://localhost:5173
 ```
 
 ---
 
-### 🚀 Step 6: Run the Server
+### 🧪 How to Test It
 
-```bash
-npm run start:dev
-```
-The server should now be running on:
-```bash
-http://localhost:3000
-```
+Start your backend server first (npm run start:dev)
 
----
+Start this frontend (npm run dev)
 
-### 🔍 API Documentation (Swagger)
+Navigate to:
 
-Swagger UI is available at:
-```bash
-http://localhost:3000/api
-```
-You can test all routes from there (signup, signin, welcome).
+    /signup → create a user
+
+    /signin → login
+
+    /welcome → token-protected greeting
+
+
+
